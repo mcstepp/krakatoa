@@ -1,0 +1,28 @@
+### How to run locally
+
+1. Download the project/clone
+`git clone`
+
+2. `composer create-project $PROJECT_NAME$`
+
+3. npm install
+
+4. ng build
+
+5. php vendor/bin/homestead make (Mac)
+
+6. Configure Homestead.yaml
+
+7. vagrant up
+
+## REQUIRES
+1. Vagrant / Virtualbox
+2. npm 3+
+3. Angular CLI 1.4+
+
+### No .env file?
+1. Copy the .env.example but don't commit it
+
+### No APP_KEY in .env file?
+1. `php artisan key:generate`
+
