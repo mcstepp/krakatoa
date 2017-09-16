@@ -9,14 +9,22 @@ import { HttpModule } from '@angular/http';
 import {
     MdButtonModule,
     MdCheckboxModule,
-    MdToolbarModule} from '@angular/material';
+    MdToolbarModule,
+    MdCardModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { ForumDirectoryComponent } from './forum-directory/forum-directory.component';
+import { ForumDirectoryService } from './forum-directory/forum-directory.service';
+import { ForumViewComponent } from './forum-view/forum-view.component';
+import { ThreadViewComponent } from './thread-view/thread-view.component';
+import { ForumComponent } from './forum/forum.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForumDirectoryComponent
+    ForumDirectoryComponent,
+    ForumViewComponent,
+    ThreadViewComponent,
+    ForumComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -26,6 +34,7 @@ import { ForumDirectoryComponent } from './forum-directory/forum-directory.compo
     MdButtonModule,
     MdCheckboxModule,
     MdToolbarModule,
+    MdCardModule,
     appRoutes
   ],
   exports: [
@@ -33,7 +42,8 @@ import { ForumDirectoryComponent } from './forum-directory/forum-directory.compo
     MdCheckboxModule
   ],
   providers: [
-      appRoutingProviders
+      appRoutingProviders,
+      ForumDirectoryService
   ],
   bootstrap: [AppComponent]
 })
