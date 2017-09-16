@@ -1,17 +1,22 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { MdButtonModule, MdCheckboxModule } from '@angular/material';
+
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { appRoutes, appRoutingProviders } from './app.routes';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+import {
+    MdButtonModule,
+    MdCheckboxModule,
+    MdToolbarModule} from '@angular/material';
 import { AppComponent } from './app.component';
-import { ForumComponent } from './forum/forum.component';
+import { ForumDirectoryComponent } from './forum-directory/forum-directory.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ForumComponent
+    ForumDirectoryComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -19,13 +24,17 @@ import { ForumComponent } from './forum/forum.component';
     FormsModule,
     HttpModule,
     MdButtonModule,
-    MdCheckboxModule
+    MdCheckboxModule,
+    MdToolbarModule,
+    appRoutes
   ],
   exports: [
     MdButtonModule,
     MdCheckboxModule
   ],
-  providers: [],
+  providers: [
+      appRoutingProviders
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
