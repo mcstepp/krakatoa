@@ -11,5 +11,15 @@
 |
 */
 
-Route::get('/', 'AngularController@serve');
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/m', 'AngularController@serve');
+Route::get('/m/{all}', 'AngularController@serve')->where('all','.*');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('threads', 'ThreadsController');
+Route::post('/threads/{thread}/replies', 'RepliesController@store');
 
