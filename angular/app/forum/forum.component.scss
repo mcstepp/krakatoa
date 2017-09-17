@@ -1,0 +1,14 @@
+.m-forum-content {
+
+  md-sidenav-container {
+    height: calc(100vh - 64px);
+    margin: 0;
+    width: 100%;
+  }
+
+  .m-forum-nav {
+    width: 200px;
+    background-color: red;
+    //position: fixed;
+  }
+}

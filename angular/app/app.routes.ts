@@ -6,28 +6,36 @@ import { ThreadViewComponent } from './thread-view/thread-view.component';
 import {ForumComponent} from './forum/forum.component';
 
 const routes: Routes = [{
-            path: 'm',
-            children: [
-                {
+             path: 'm',
+             children: [{
                     path: '',
                     redirectTo: 'forum',
                     pathMatch: 'full'
                 },
                 {
-                    path: 'forum/:fid',
-                    component: ForumComponent,
-                    children: [
-                        {path: '', component: ForumViewComponent},
-                        {path: 'thread', redirectTo: '', pathMatch: 'full'},
-                        {path: 'thread/:tid', component: ThreadViewComponent}
-                    ]
-                },
-                {
                     path: 'forum',
-                    component: ForumDirectoryComponent
+                    component: ForumComponent,
+                    children: [{
+                            path: '',
+                            component: ForumDirectoryComponent
+                        },
+                        {
+                            path: ':fid',
+                            component: ForumViewComponent
+                        },
+                        {
+                            path: ':fid/thread',
+                            redirectTo: ':fid',
+                            pathMatch: 'full'
+                        },
+                        {
+                            path: ':fid/thread/:tid',
+                            component: ThreadViewComponent
+                        }
+                    ]
                 }
-            ]
-        }];
+         ]}
+];
 
 export const appRoutingProviders: any[] = [
 
