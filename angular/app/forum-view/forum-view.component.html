@@ -1,3 +1,5 @@
-<p>
-  forum-view works!
-</p>
+<md-card *ngFor="let thread of threads" class="m-thread-card">
+  <md-card-title>{{thread.name}}</md-card-title>
+  <md-card-subtitle>Posted by {{thread.author}}</md-card-subtitle>
+  <md-card-content>{{thread.description}}</md-card-content>
+</md-card>
