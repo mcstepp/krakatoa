@@ -12,8 +12,17 @@ import {
     MdToolbarModule,
     MdCardModule,
     MdSidenavModule,
-    MdListModule
+    MdListModule,
+    MdIconModule
 } from '@angular/material';
+
+import {
+    CovalentLayoutModule,
+    CovalentStepsModule
+    /*, any other modules */
+} from '@covalent/core';
+
+
 import { AppComponent } from './app.component';
 import { ForumDirectoryComponent } from './forum-directory/forum-directory.component';
 import { ForumDirectoryService } from './forum-directory/forum-directory.service';
@@ -42,6 +51,9 @@ import { ForumMenuComponent } from './forum-menu/forum-menu.component';
     MdCardModule,
     MdSidenavModule,
     MdListModule,
+    MdIconModule,
+    CovalentLayoutModule,
+    CovalentStepsModule,
     appRoutes
   ],
   exports: [

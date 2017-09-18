@@ -1,15 +1,12 @@
-<div class="m-forum-content">
-    <md-sidenav-container>
-
-        <md-sidenav mode="side"
-                    opened="true"
-                    class="m-forum-nav">
-            <m-forum-menu></m-forum-menu>
-        </md-sidenav>
-
-        <section class="m-forum-content">
-            <router-outlet></router-outlet>
-        </section>
-
-    </md-sidenav-container>
-</div>
+<td-layout-manage-list opened="true" mode="side">
+    <div td-sidenav-content>
+        <m-forum-menu></m-forum-menu>
+    </div>
+    <md-toolbar>
+        <button md-button tdLayoutManageListToggle>
+            Toggle
+        </button>
+        Content Title
+    </md-toolbar>
+    <router-outlet></router-outlet>
+</td-layout-manage-list>

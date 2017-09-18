@@ -1,12 +1,21 @@
-<md-toolbar color="primary" class="m-userbar">
-  <span>{{ title }}</span>
+<td-layout>
+  <td-navigation-drawer flex sidenavTitle="Krakatoa" name="Firstname Lastname" email="firstname.lastname@company.com">
+    <md-nav-list>
+      <a md-list-item><md-icon>home</md-icon>Home</a>
+    </md-nav-list>
+    <div td-navigation-drawer-menu>
+      <md-nav-list>
+        <a md-list-item><md-icon>account_box</md-icon>Profile</a>
+      </md-nav-list>
+    </div>
+  </td-navigation-drawer>
+  <td-layout-nav toolbarTitle="Krakatoa" navigationRoute="/">
+    <button md-icon-button td-menu-button tdLayoutToggle>
+      <md-icon>menu</md-icon>
+    </button>
 
-  <!-- This fills the remaining space of the current row -->
-  <span class="example-fill-remaining-space"></span>
-
-  <span>Right Aligned Text</span>
-</md-toolbar>
-
-<section id="m-content">
-  <router-outlet></router-outlet>
-</section>
+    <section id="m-content">
+      <router-outlet></router-outlet>
+    </section>
+  </td-layout-nav>
+</td-layout>
